@@ -1,0 +1,148 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: url(bday.jpg);
+}
+.card{
+	position: relative;
+	width: 500px;
+	height: 500px;
+	background: #ffefef;
+	transform-style: preserve-3d;
+	transform: perspective(1000px);
+	box-shadow: 10px 20px 40px rgba(0, 0, 0, 1);
+	transition: 2s;
+}
+.card:hover{
+	transform: translateX(50%);
+}
+.card .imgbox{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	background-color: #ff7070;
+	transform-origin: left;
+	transform-style: preserve-3d;
+	transition: 2s;
+}
+.imgbox h1{
+	padding-top: 2em;
+	text-align: center;
+    font-family: 'Nobile', sans-serif;
+    font-style: italic;
+    font-size: 70px;
+    line-height: 1.2em;
+    text-shadow: 4px 4px 0px rgb(0 0 0 / 15%), 1px 1px 0 rgb(255 200 200), 2px 2px 0 rgb(255 150 150), 3px 3px 0 rgb(255 125 125);
+    color: #FFF;
+}
+.imgbox p{
+	position: absolute;
+	bottom: 1em;
+	right: 1em;
+	color: #fff;
+}
+.mobile{
+	display: none;
+}
+.card:hover .imgbox{
+	transform: rotateY(-180deg);
+}
+.card .imgbox img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+	box-shadow: 10px 20px 40px rgba(0, 0, 0, .25);
+}
+.imgbox img{
+	transform: rotateY(180deg);
+}
+.card .details{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.card .details .content{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.card .details .content h2{
+	text-align: center;
+	font-weight: 700;
+	line-height: 1em;
+}
+.card .details .content h2 span{
+	color: #555;
+	font-size: 0.8em;
+}
+.para p{
+	margin: 1em;
+	font-size: 1.2em;
+	font-family: 'Nobile';
+    color: #331717;
+    font-style: italic;
+}
+p.signed{
+	text-align: center;
+	font-family: 'Dancing Script', sans-serif;
+}
+.card .box-3{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: #ff7070;
+	transform-origin: right;
+	transform-style: preserve-3d;
+	/* backface-visibility: hidden;	 */
+	transition: 2s;
+}
+.card:hover .box-3{
+	transform: rotateY(180deg);
+}
+.box-3 .content-2{
+	transform: rotateY(180deg);
+}
+@media (max-width: 700px){
+	.card{
+		width: 200px!important;
+	}
+	.imgbox h1{
+		padding-top: 200px;
+		font-size: 25px;
+	}
+	.para p{
+		margin: .75em;
+		font-size: .85em;
+		line-height: 1.5em;
+	}
+	.imgbox p:nth-child(2){
+		display:block;
+	}
+	.pc{
+		display: none;
+	}
+}
